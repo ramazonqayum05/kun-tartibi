@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kun Tartibi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icon-192.png" />
+<meta name="theme-color" content="#3b82f6" />
+
+</head>
+<body>
+  <div class="container">
+    <header>
+       <div class="headerUn">
+        <h1>Kun Tartibi</h1>
+        <p>Xotincham uchun</p>
+       </div>
+      <label class="toggle">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider"></span>
+      </label>
+    </header>
+
+    <div class="days">
+      <span>Du</span>
+      <span>Se</span>
+      <span>Ch</span>
+      <span>Pa</span>
+      <span>Ju</span>
+      <span>Sh</span>
+      <span class="active">Ya</span>
+    </div>
+
+    <div class="add-task">
+      <input type="text" id="taskInput" placeholder="Yangi vazifa qo‘shish" />
+      <input type="time" id="taskTime" />
+      <button onclick="addTask()">Qo‘shish</button>
+    </div>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker ro‘yxatdan o‘tdi"))
+        .catch(err => console.log("Xatolik:", err));
+    }
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,195 @@
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+    --card: #f3f4f6;
+    --success: #d1fae5;
+    --error: #fee2e2;
+  }
+  
+  body.dark {
+    --bg: #111827;
+    --text: #ffffff;
+    --card: #1f2937;
+    --success: #065f46;
+    --error: #7f1d1d;
+  }
+  
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: all 0.3s ease;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .toggle {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+  
+  .toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 20px;
+    top: 0; left: 0; right: 0; bottom: 0;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+  }
+  
+  .toggle input:checked + .slider {
+    background-color: #4ade80;
+  }
+  
+  .toggle input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+  
+  .days {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .days span {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: var(--card);
+  }
+  
+  .days .active {
+    font-weight: bold;
+    background-color: #60a5fa;
+    color: white;
+  }
+  
+  .add-task {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .add-task input[type="text"], .add-task input[type="time"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: var(--card);
+    color: var(--text);
+  }
+  
+  button {
+    padding: 8px 16px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .task {
+    background-color: var(--card);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .task .time {
+    font-weight: bold;
+  }
+  
+  .status {
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .done {
+    background-color: var(--success);
+    color: green;
+  }
+  
+  .failed {
+    background-color: var(--error);
+    color: darkred;
+  }
+  
+  .delete-btn {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+
+  
+  @media (max-width: 600px) {
+    .add-task {
+      flex-direction: column;
+    }
+  
+    .add-task input[type="text"],
+    .add-task input[type="time"],
+    .add-task button {
+      width: 100%;
+    }
+  
+    .days {
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+  
+    .task {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+  
+    .task .time {
+      font-size: 1.1em;
+    }
+  }
+  
