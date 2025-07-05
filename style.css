@@ -166,7 +166,7 @@
   }
 
   
-  @media (max-width: 600px) {
+  /* @media (max-width: 600px) {
     .add-task {
       flex-direction: column;
     }
@@ -192,4 +192,4 @@
       font-size: 1.1em;
     }
   }
-  
+   */
